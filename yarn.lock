@@ -22,6 +22,11 @@ metismenu@^3.0.6:
   resolved "https://registry.yarnpkg.com/metismenu/-/metismenu-3.0.6.tgz#595ead90ccb88037ef8af5e5316598a3c57b7e54"
   integrity sha512-aO2XoKWMLNGAw3skRPWcAhZUtootPhEk6Lz5Jamc9RlulhThp4h09AoeXevhg4vVQvwQjl8UenN09Wnr2QeM5w==
 
+overlayscrollbars@^1.13.1:
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/overlayscrollbars/-/overlayscrollbars-1.13.1.tgz#0b840a88737f43a946b9d87875a2f9e421d0338a"
+  integrity sha512-gIQfzgGgu1wy80EB4/6DaJGHMEGmizq27xHIESrzXq0Y/J0Ay1P3DWk6tuVmEPIZH15zaBlxeEJOqdJKmowHCQ==
+
 popper.js@^1.16.1:
   version "1.16.1"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
