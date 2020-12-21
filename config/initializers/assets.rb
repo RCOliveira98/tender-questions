@@ -18,7 +18,7 @@ Rails.application.config.assets.precompile += %w(
     admins_backoffice.css
     users_backoffice.js
     users_backoffice.css
-    logo.png avatar.png
+    logo.png avatar.png avatar-admin.png
 )
 # lib
 Rails.application.config.assets.precompile += %w( sb-admin-2.js sb-admin-2.css adminlte.js adminlte.css )
