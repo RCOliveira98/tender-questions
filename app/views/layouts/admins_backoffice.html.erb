@@ -37,9 +37,15 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span></a>
+                <%= link_to admins_backoffice_welcome_index_path, class: 'nav-link' do %>
+                    <i class="fas fa-fw fa-tachometer-alt"></i> Dashboard
+                <% end %>
+            </li>
+
+            <li class="nav-item">
+                <%= link_to admins_backoffice_admins_index_path, class: 'nav-link' do %>
+                    <i class="fas fa-fw fa-users"></i> Administradores
+                <% end %>
             </li>
 
             <!-- Nav Item - Pages Collapse Menu -->
