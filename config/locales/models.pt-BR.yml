@@ -10,7 +10,9 @@
     attributes:
       admin:
         id: Código
-        email: e-mail
+        email: E-mail
+        password: Senha
+        password_confirmation: Confirmação de senha
         update_at: Atualizado em
         created_at: Criado em
       user:
