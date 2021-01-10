@@ -1,10 +1,28 @@
 class AdminsBackoffice::AdminsController < AdminsBackofficeController
-  before_action :set_admin, only: [:update, :edit]
+  before_action :find_admin, only: [:update, :edit]
   before_action :check_password, only: [:update]
 
   def index
-    @admins = Admin.all
+    @admins = Admin.all()
   end
+
+  def new
+    @admin = Admin.new()
+  end
+
+  def create
+
+    @admin = Admin.new(admin_params)
+
+    if @admin.save()
+      redirect_to admins_backoffice_admins_path, notice: "Administrador cadastrado!"
+    else
+      render :new
+    end
+
+  end
+  
+  
 
   def edit
   end
@@ -21,7 +39,7 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
 
   private
 
-  def set_admin
+  def find_admin
     @admin = Admin.find(params[:id])
   end
 
