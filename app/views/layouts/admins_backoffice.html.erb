@@ -334,5 +334,16 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
+    <% if notice %>
+        <%= javascript_tag do %>
+            $.bootstrapGrowl('<%= notice %>', {
+            type: 'success',
+            align: 'right',
+            allow_dismiss: true,
+            stackup_spacing: 10
+            });
+        <% end %>
+    <% end %>
+
 </body>
 </html>

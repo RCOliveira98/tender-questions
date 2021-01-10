@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.5.3",
+    "bootstrap-growl-ifightcrime": "^1.1.0",
     "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "metismenu": "^3.0.6",
