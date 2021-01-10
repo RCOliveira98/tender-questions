@@ -1,16 +1,17 @@
 class AdminsBackoffice::AdminsController < AdminsBackofficeController
+  before_action :set_admin, only: [:update, :edit]
+  before_action :check_password, only: [:update]
+
   def index
     @admins = Admin.all
   end
 
   def edit
-    @admin = find_param_by_id()
   end
 
   def update
-    @admin = find_param_by_id()
 
-    if @admin.update(strong_paramenters())
+    if @admin.update(admin_params())
       redirect_to admins_backoffice_admins_path, notice: "Admnistrador #{@admin.id} atualizado!"
     else
       render :edit
@@ -19,13 +20,21 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   end
 
   private
-  def find_param_by_id
-    Admin.find(params[:id])
+
+  def set_admin
+    @admin = Admin.find(params[:id])
   end
 
-  def strong_paramenters
+  def admin_params
     params.require(:admin).permit(:email, :password, :password_confirmation)
   end
-  
+
+  def check_password
+
+    if params[:admin][:password].blank? && params[:admin][:password_confirmation].blank?
+      params[:admin].extract!(:password, :password_confirmation)
+    end
+
+  end
 
 end
