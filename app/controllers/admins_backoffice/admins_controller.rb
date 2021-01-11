@@ -1,5 +1,5 @@
 class AdminsBackoffice::AdminsController < AdminsBackofficeController
-  before_action :find_admin, only: [:update, :edit]
+  before_action :find_admin, only: [:update, :edit, :destroy]
   before_action :check_password, only: [:update]
 
   def index
@@ -20,9 +20,7 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
       render :new
     end
 
-  end
-  
-  
+  end 
 
   def edit
   end
@@ -30,12 +28,23 @@ class AdminsBackoffice::AdminsController < AdminsBackofficeController
   def update
 
     if @admin.update(admin_params())
-      redirect_to admins_backoffice_admins_path, notice: "Admnistrador #{@admin.id} atualizado!"
+      redirect_to admins_backoffice_admins_path, notice: "Administrador #{@admin.id} atualizado!"
     else
       render :edit
     end
 
   end
+
+  def destroy
+
+    if @admin.destroy
+      redirect_to admins_backoffice_admins_path, notice: 'Administrador excluído com sucesso!'
+    else
+      render :index
+    end
+
+  end
+  
 
   private
 
