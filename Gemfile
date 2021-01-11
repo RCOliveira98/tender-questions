@@ -42,6 +42,10 @@ gem 'devise'
 gem 'rails-i18n', '~> 5.1'
 # A terminal spinner for tasks that have non-deterministic time frame.
 gem 'tty-spinner'
+# A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps
+gem 'kaminari'
+# Translations for the kaminari gem
+gem 'kaminari-i18n'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
