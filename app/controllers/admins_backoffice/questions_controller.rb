@@ -1,10 +1,26 @@
 class AdminsBackoffice::QuestionsController < AdminsBackofficeController
     before_action :find_question_by_id, only: [:edit, :update, :destroy]
-    before_action :select_subjects, only: [:edit]
+    before_action :select_subjects, only: [:edit, :new]
 
     def index
         @questions = Question.all().page(params[:page])
     end
+
+    def new
+        @question = Question.new
+    end
+    
+    def create
+        @question = Question.new(question_params())
+
+        if @question.save()
+            redirect_to admins_backoffice_questions_path, notice: "Pergunta cadastrada com sucesso!"
+        else
+            select_subjects()
+            render :new
+        end
+    end
+    
 
     def edit
     end
