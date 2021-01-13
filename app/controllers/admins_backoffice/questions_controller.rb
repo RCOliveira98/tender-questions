@@ -1,5 +1,5 @@
 class AdminsBackoffice::QuestionsController < AdminsBackofficeController
-    before_action :find_question_by_id, only: [:edit, :update]
+    before_action :find_question_by_id, only: [:edit, :update, :destroy]
     before_action :select_subjects, only: [:edit]
 
     def index
@@ -16,6 +16,15 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
             render :edit
         end
     end
+
+    def destroy
+        if @question.destroy()
+            redirect_to admins_backoffice_questions_path, notice: "Pergunta de ID #{@question.id} excluída com sucesso!"
+        else
+            render :index
+        end
+    end
+    
     
     private
 
@@ -30,8 +39,5 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
     def select_subjects
         @subjects = Subject.all().order(:description)
     end
-    
-    
-    
     
 end
