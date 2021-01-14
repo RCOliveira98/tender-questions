@@ -3,10 +3,10 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">ID</th>
-      <th scope="col">EMAIL</th>
-      <th scope="col">DESDE</th>
-      <th scope="col">ÚLTIMA ATUALIZAÇÃO</th>
+      <th scope="col"><%= t_attributes(@admins, :id) %></th>
+      <th scope="col"><%= t_attributes(@admins, :email) %></th>
+      <th scope="col"><%= t_attributes(@admins, :created_at) %></th>
+      <th scope="col"><%= t_attributes(@admins, :updated_at) %></th>
       <th scope="col">
         <%= link_to new_admins_backoffice_admin_path, class: "btn btn-success btn-block" do %>
             <i class="fa fa-plus"></i> Novo

@@ -22,28 +22,28 @@
         email: E-mail
         password: Senha
         password_confirmation: Confirmação de senha
-        update_at: Atualizado em
+        updated_at: Atualizado em
         created_at: Criado em
       user:
         id: Código
         email: E-mail
-        update_at: Atualizado em
+        updated_at: Atualizado em
         created_at: Criado em
       subject:
         id: Código
         description: Descrição
-        update_at: Atualizado em
+        updated_at: Atualizado em
         created_at: Criado em
       question:
         id: Código
         description: Descrição
         subject: Assunto
-        update_at: Atualizado em
+        updated_at: Atualizado em
         created_at: Criado em
       answer:
         id: Código
         description: Descrição
         question: Pergunta
         correct: Correta?
-        update_at: Atualizado em
+        updated_at: Atualizado em
         created_at: Criado em

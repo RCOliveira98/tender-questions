@@ -3,9 +3,9 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">ID</th>
-      <th scope="col">PERGUNTA</th>
-       <th scope="col">ASSUNTO</th>
+      <th scope="col"><%= t_attributes(@questions, :id) %></th>
+      <th scope="col"><%= t_attributes(@questions, :description) %></th>
+       <th scope="col"><%= t_attributes(@questions, :subject) %></th>
       <th scope="col">
         <%= link_to new_admins_backoffice_question_path, class: "btn btn-success btn-block" do %>
             <i class="fa fa-plus"></i> Novo
