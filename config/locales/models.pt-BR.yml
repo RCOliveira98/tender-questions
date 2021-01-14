@@ -10,6 +10,12 @@
       subject:
         one: Assunto
         other: Assuntos
+      question:
+        one: Pergunta
+        other: Perguntas
+      answer:
+        one: Resposta
+        other: Respostas
     attributes:
       admin:
         id: Código
@@ -26,5 +32,18 @@
       subject:
         id: Código
         description: Descrição
+        update_at: Atualizado em
+        created_at: Criado em
+      question:
+        id: Código
+        description: Descrição
+        subject: Assunto
+        update_at: Atualizado em
+        created_at: Criado em
+      answer:
+        id: Código
+        description: Descrição
+        question: Pergunta
+        correct: Correta?
         update_at: Atualizado em
         created_at: Criado em
