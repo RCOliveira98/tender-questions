@@ -1,0 +1,6 @@
+'pt-BR':
+  messages:
+    confirm_delete: Deseja realmente excluir %{body}?
+    listing: Listando %{model}
+    editing: Editando %{model}
+    new: Novo %{model}

@@ -46,12 +46,16 @@ gem 'tty-spinner'
 gem 'kaminari'
 # Translations for the kaminari gem
 gem 'kaminari-i18n'
+# Cocoon makes it easier to handle nested forms.
+gem 'cocoon'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # A library for generating fake data such as names, addresses, and phone numbers.
   gem 'faker'
+  # This is a small gem which causes rails console to open pry.
+  gem 'pry-rails'
 end
 
 group :development do

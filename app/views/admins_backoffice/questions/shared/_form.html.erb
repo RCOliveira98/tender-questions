@@ -25,6 +25,15 @@
         <%= form.collection_select(:subject_id, @subjects, :id, :description, {}, { class: "form-control", placeholder: 'Selecione um assunto'}) %>
     </div>
 
+    <hr>
+    <div id="answers">
+        <%= form.fields_for :answers do |answer|%>
+            <%= render partial: 'answer_fields', locals: {f: answer} %>
+        <% end %>
+
+        <%= link_to_add_association('[Adicionar Resposta]', form, :answers) %>
+    </div>
+
     <button type="submit" class="btn btn-primary">
         <i class="fa fa-paper-plane" aria-hidden="true"></i> Enviar
     </button>

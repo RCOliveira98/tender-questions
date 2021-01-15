@@ -49,7 +49,7 @@ class AdminsBackoffice::QuestionsController < AdminsBackofficeController
     end
 
     def question_params
-        params.require(:question).permit(:description, :subject_id)
+        params.require(:question).permit(:description, :subject_id, answers_attributes: [:id, :description, :correct, :_destroy])
     end
 
     def select_subjects
