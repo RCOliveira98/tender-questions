@@ -39,8 +39,20 @@
             </li>
           <% end %>
         </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Pergunta..." aria-label="Search">
+        <button class="btn btn-dark my-2 my-sm-0" type="submit">Pesquisar</button>
+    </form>
       </div>
     </nav>
+
+    <div class="container mt-1">
+      <div class="jumbotron">
+        <h1 class="display-4">Treine seus conhecimentos!</h1>
+        <p class="lead">Aproveite a nossa plataforma para colocar a prova seus estudos.</p>
+      </div>
+    </div>
+
     <%= yield %>
 
     <%= javascript_include_tag 'application' %>
