@@ -11,12 +11,15 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+
   namespace :site do
     get 'welcome/index'
+    get 'search', to: 'search#questions'
   end
   namespace :profiles_backoffice do
     get 'welcome/index'
   end
+  
   devise_for :admins
 
   root to: "site/welcome#index"

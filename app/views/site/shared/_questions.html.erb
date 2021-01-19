@@ -1,0 +1,17 @@
+<% @questions.each do |question| %>
+    <div class="card mb-1">
+        <div class="p-1 card-title bg-primary text-light">
+            <%= question.description %>
+        </div>
+        <div class="card-body">
+            <ul>
+                <% question.answers.each do |answer| %>
+                    <li><%= answer.description %></li>
+                <% end %>
+            </ul>
+            <button class="btn btn-info">Responder</button>
+        </div>
+    </div>
+<% end %>
+
+<%= paginate @questions %>

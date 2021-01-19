@@ -39,10 +39,14 @@
             </li>
           <% end %>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Pergunta..." aria-label="Search">
-        <button class="btn btn-dark my-2 my-sm-0" type="submit">Pesquisar</button>
-    </form>
+        <%= form_with url: site_search_path, local: true, class:"form-inline my-2 my-lg-0", method: :get do |form| %>
+          <div class="form-group">
+            <%= form.text_field :term, class:"form-control mr-sm-2", placeholder:"Pergunta..." %>
+          </div>
+          <button type="submit" class="btn btn-dark my-2 my-sm-0">
+            <i class="fa fa-search" aria-hidden="true"></i> Pesquisar
+          </button>
+        <% end %>
       </div>
     </nav>
 
@@ -53,7 +57,9 @@
       </div>
     </div>
 
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'site' %>
