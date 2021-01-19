@@ -5,12 +5,55 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application' %>
-    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag 'application' %>
+    <%= stylesheet_link_tag 'site' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
   </head>
 
   <body>
-  <p>layout site</p>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">RespondeAÍ</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <% unless user_signed_in? %>
+            <li class="nav-item"><%= link_to 'Entrar', user_session_path, class: "nav-link" %></li>
+            <li class="nav-item"><%= link_to 'Cadastrar-se', new_user_registration_path, class: "nav-link" %></li>
+          <% else %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-envelope"></i> <%= current_user.email %>
+              </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <%= link_to users_backoffice_welcome_index_path, class: "dropdown-item" do %>
+                <i class="fas fa-user"></i> Perfil
+              <% end %>
+              <%= link_to destroy_user_session_path, method: :delete, class: 'dropdown-item' do %>
+                <i class="fas fa-sign-out-alt"></i> Sair
+              <% end %>
+            </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
+
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'site' %>
+    <% if notice %>
+      <%= javascript_tag do %>
+      $.bootstrapGrowl('<%= notice %>', {
+      type: 'success', // (null, 'info', 'danger', 'success')
+      align: 'right', // ('left', 'right', or 'center')
+      allow_dismiss: true, // If true then will display a cross to close the popup.
+      stackup_spacing: 10 // spacing between consecutively stacked growls.
+      });
+      <% end %>
+    <% end %>
   </body>
 </html>

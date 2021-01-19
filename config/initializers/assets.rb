@@ -20,6 +20,8 @@ Rails.application.config.assets.precompile += %w(
     users_backoffice.css
     admin_devise.js
     admin_devise.css
+    site.coffee
+    site.css
     logo.png avatar.png avatar-admin.png
 )
 # lib
