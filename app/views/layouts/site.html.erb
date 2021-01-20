@@ -53,7 +53,11 @@
     <div class="container mt-1">
       <div class="jumbotron">
         <h1 class="display-4">Treine seus conhecimentos!</h1>
-        <p class="lead">Aproveite a nossa plataforma para colocar a prova seus estudos.</p>
+        <% if params[:term] %>
+          <p class="lead"><%="Confira as questões referentes a pesquisa por \"#{params[:term]}\""%>.</p>
+        <% else %>
+          <p class="lead">Confira as últimas questões cadastradas em nossa ferramenta.</p>
+        <% end %>
       </div>
     </div>
 
