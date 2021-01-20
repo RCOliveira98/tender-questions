@@ -1,0 +1,8 @@
+var element = document.querySelector('#result_<%= @answer.question_id %>')
+
+
+if (<%= @answer.correct %>) {
+    element.innerHTML = '<h4 class="text-success">Você acertou! <i class="fas fa-smile-beam"></i></h4>'
+} else {
+    element.innerHTML = '<h4 class="text-danger">Você errou! <i class="fas fa-grin-beam-sweat"></i></h4>'
+}
