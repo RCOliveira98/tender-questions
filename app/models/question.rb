@@ -6,4 +6,11 @@ class Question < ApplicationRecord
 
   validates :description, length: { minimum: 5 }
   validates :subject_id, presence: true
+
+  scope :select_by_description, ->(description, page) {
+    includes(:answers).where("lower(description) LIKE ?", "%#{description.downcase}%").page(page)
+  }
+
+  scope :select_the_last_items, ->(page) { includes(:answers).page(page) }
+  
 end

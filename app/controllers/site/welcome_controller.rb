@@ -1,5 +1,5 @@
 class Site::WelcomeController < SiteController
   def index
-    @questions = Question.includes(:answers).page(params[:page])
+    @questions = Question.select_the_last_items(params[:page])
   end
 end
