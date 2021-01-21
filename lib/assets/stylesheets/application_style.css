@@ -1,3 +1,11 @@
 .li-style-none {
     list-style: none;
 }
+
+.bg-grey {
+    background-color: #e9ecef;
+}
+
+.link-style-none {
+    color: white;
+}

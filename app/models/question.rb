@@ -8,9 +8,13 @@ class Question < ApplicationRecord
   validates :subject_id, presence: true
 
   scope :select_by_description, ->(description, page) {
-    includes(:answers).where("lower(description) LIKE ?", "%#{description.downcase}%").page(page)
+    includes(:answers, :subject).where("lower(description) LIKE ?", "%#{description.downcase}%").page(page)
   }
 
-  scope :select_the_last_items, ->(page) { includes(:answers).page(page) }
+  scope :select_the_last_items, ->(page) { includes(:answers, :subject).page(page) }
+
+  scope :select_by_subject, ->(subject_id, page) {
+    includes(:answers, :subject).where(subject_id: subject_id).page(page)
+  }
   
 end
