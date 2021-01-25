@@ -9,3 +9,10 @@
 .link-style-none {
     color: white;
 }
+
+.form-center-forced {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
