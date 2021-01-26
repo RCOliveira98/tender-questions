@@ -31,14 +31,21 @@
             <%= profile_form.text_field :address, class: 'form-control' %>
         </div>
 
-        <div class="form-group">
-            <%= profile_form.label :gender %>
-            <%= profile_form.text_field :gender, class: 'form-control' %>
+        <div class="custom-control custom-radio custom-control-inline">
+            <%= profile_form.radio_button :gender, "F", class: "custom-control-input", id: 'radioBtnF'  %>
+            <%= profile_form.label :gender, "Feminino", class: "custom-control-label", for: 'radioBtnF' %>
         </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <%= profile_form.radio_button :gender, "M", class: "custom-control-input", id: 'radioBtnM'  %>
+            <%= profile_form.label :gender, "Masculino", class: "custom-control-label", for: 'radioBtnM' %>
+        </div>
+
 
         <div class="form-group">
             <%= profile_form.label :birthdate %>
-            <%= profile_form.text_field :birthdate, class: 'form-control' %>
+            <%= profile_form.date_field :birthdate,
+            value: profile_form.object.try(:strftime,"%m/%d/%Y"),
+            class: 'form-control' %>
         </div>
     <% end %>
 
