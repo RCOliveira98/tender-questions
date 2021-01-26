@@ -9,7 +9,7 @@
     </div>
 <% end %>
 
-<%= form_with(url: users_backoffice_profile_path, model: @user, local:true) do |f| %>
+<%= form_with(url: users_backoffice_profile_path, model: @user, local:true, class: 'card pl-4 pr-4 pb-2 pt-2 shadow-lg') do |f| %>
     <div class="form-group">
         <%= f.label :email %>
         <%= f.email_field :email, class: 'form-control', readonly: true %>
@@ -47,6 +47,15 @@
             value: profile_form.object.try(:strftime,"%m/%d/%Y"),
             class: 'form-control' %>
         </div>
+
+        <div class="form-group">
+            <div class="custom-file">
+                <%= profile_form.label :avatar, 'Selecione um arquivo ...', class: 'custom-file-label' %><br />
+                <%= profile_form.file_field :avatar, class: 'custom-file-input' %>
+            </div>
+        </div>
+
+        <%= image_tag(url_avatar(@user), class: 'img-fluid') %>
     <% end %>
 
     <div class="form-group">
